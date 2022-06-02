@@ -11,9 +11,15 @@
      "PassWord": {
       "description": "Please enter your MEGA.NZ Password",
       "value": "Enter your password here"
+    },
+     "DavUsername": {
+      "description": "Please enter a username for WebDav",
+      "value": "Enter username/email here"
+    },
+     "DavPassword": {
+      "description": "Please enter your WebDav Password",
+      "value": "Enter your password here"
     }
-
-
   },
   "website": "",
   "repository": "",
