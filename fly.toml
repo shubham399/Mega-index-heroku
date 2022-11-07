@@ -1,0 +1,20 @@
+ app = "mega-webdav"
+kill_signal = "SIGTERM"
+[build]
+  dockerfile = "Dockerfile"
+[[services]]
+  internal_port = 8000
+  protocol = "tcp"
+[[services.ports]]
+    handlers = ["http"]
+    port = "80"
+[[services.ports]]
+    handlers = ["tls", "http"]
+    port = "443"
+[env]
+    HTTPS_ONLY = 1
+    PORT=8000
+    # DavPassword =  set as secretes flyctl secrets set PassWord=VALUE
+    DavUsername = 'admin'  
+    # UserName= set as secretes flyctl secrets set PassWord=VALUE
+    # PassWord = set as secretes flyctl secrets set PassWord=VALUE
