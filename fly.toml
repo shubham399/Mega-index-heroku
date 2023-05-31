@@ -1,16 +1,14 @@
- app = "mega-webdav"
+app = "mega-webdav"
 kill_signal = "SIGTERM"
 [build]
   dockerfile = "Dockerfile"
-[[services]]
+[http_service]
   internal_port = 8000
-  protocol = "tcp"
-[[services.ports]]
-    handlers = ["http"]
-    port = "80"
-[[services.ports]]
-    handlers = ["tls", "http"]
-    port = "443"
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
 [env]
     HTTPS_ONLY = 1
     PORT=8000
